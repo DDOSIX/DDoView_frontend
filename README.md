@@ -1,3 +1,10 @@
-[x] Router
-[ ] Global Styles
-[ ] Arch.
+# Tto-View
+
+Tto-View Web.
+
+## Setting: 
+
+- [x] Router
+- [x] Global Style
+- [ ] Arch.
+
