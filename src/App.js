@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { Theme, GlobalStyle } from './GlobalStyle';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import WritingContentPage from './pages/WritingContent';
 
 function App() {
   return (
@@ -13,13 +14,15 @@ function App() {
       <Router>
         <Switch>
           <Route path={routes.home} exact>
-            <Layout>
+            {/* <Layout>
               <Home 
                 accent={Theme.accent}
                 bgColor={Theme.bgColor}
               />
-            </Layout>
+            </Layout> */}
+            <WritingContentPage />
           </Route>
+          
         </Switch>
       </Router>
     </ThemeProvider>

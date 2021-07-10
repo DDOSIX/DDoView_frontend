@@ -13,27 +13,28 @@ const ColoredButton = styled.button`
     border: 1px solid ${props => props.color};
     background-color: ${props => props.color};
     color: white;
-    height: 35px;
+    height: 30px;
+    width: 64px;
     margin-right: 8px;
     margin-bottom: 8px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-top: 1rem;
-    border-radius: 2rem;
-    padding: 0.75rem 0.75rem 0.7rem 1rem;
-    font-size: 0.875rem;
+    border-radius: 8px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 12px;
     cursor: pointer;
 `;
 
-function Button({ btnColor, btnName, btnLink }){
+
+function Button({ btnColor, children }){
     return (
         <ButtonContainer>
-            <a href={btnLink}>
                 <ColoredButton color={btnColor}>
-                    { btnName }
+                    { children }
                 </ColoredButton>
-            </a>
         </ButtonContainer>
     );
 }

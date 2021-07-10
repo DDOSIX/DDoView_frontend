@@ -28,7 +28,7 @@ const SearchContainer = styled.div`
 function Search(){
     return (
         <SearchContainer>
-            <FontAwesomeIcon color={"#3C3C43"} icon={faSearch} />
+            <FontAwesomeIcon color="#3C3C43" size="lg" icon={faSearch} />
             <input placeholder="Search" />
         </SearchContainer>
     );
