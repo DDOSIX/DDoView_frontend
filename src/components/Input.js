@@ -41,4 +41,24 @@ export const Input = styled.input`
         border-color: #0084F4;
     }
 `;
-export default Input;
+
+export const InputContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid black;
+    height: 48px;
+
+    > input{
+        width: 97.5%;
+        border: transparent;
+        margin-left: 8px;
+        &::placeholder {
+            font-size: 12px;
+            color: #0084F4;
+        }
+    }
+`;

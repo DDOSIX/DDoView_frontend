@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import React, { useState } from 'react';
-import { Input, TextArea } from '../components/Input';
+import { InputContainer, TextArea } from '../components/Input';
 import Button from "../components/Button";
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -64,16 +64,7 @@ const ButtonContainer = styled.div`
     }
 `;
 
-const InputContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    border: 1px solid black;
-    height: 48px;
-
+const ButtonInputContainer = styled(InputContainer)`
     &:hover{
         > button {
             display: block;
@@ -84,15 +75,6 @@ const InputContainer = styled.div`
     > button {
         display: none;
         border: none;
-    }
-    > input{
-        width: 97.5%;
-        border: transparent;
-        margin-left: 8px;
-        &::placeholder {
-            font-size: 12px;
-            color: #0084F4;
-        }
     }
 
 `;
@@ -164,7 +146,7 @@ function WritingContentPage(){
                     {indexes.map(index => {
                         const fieldName = `input[${index}]`;
                         return (
-                            <InputContainer>
+                            <ButtonInputContainer>
                                 <input 
                                     type="text"
                                     placeholder={"Q. 질문을 작성해주세요."}
@@ -174,7 +156,7 @@ function WritingContentPage(){
                                 <button type="button" onClick={() => removeInput(index)}>
                                     <FontAwesomeIcon size="lg" icon={faTimes} />
                                 </button>
-                            </InputContainer>
+                            </ButtonInputContainer>
                     );
                     })}
                     <ButtonContainer>

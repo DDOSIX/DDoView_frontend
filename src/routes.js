@@ -1,8 +1,8 @@
 const routes = {
     home: "/",
     content: "/content",
-    reviewDetail: "/content/review-detail",
+    reviewDetail: "/review-detail",
     writingContent: "/writing-content",
-    writingReview: "/content/writing-review",
+    writingReview: "/writing-review",
 };
 export default routes;
