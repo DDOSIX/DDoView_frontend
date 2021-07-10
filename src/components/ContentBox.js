@@ -5,6 +5,7 @@ const Container = styled.div`
     border: 1px solid #e4e4e4;
     padding: 15px 13px;
     line-height: 14px;
+    margin-top: 15px;
 `;
 
 function ContentBox({ children }){

@@ -1,6 +1,7 @@
 import ListItem from "../components/ListItem";
 import Text from '../components/Text'
 import ContentBox from "../components/ContentBox";
+import LongButton from "../components/LongButton";
 
 function Content(){
     return (
@@ -16,6 +17,13 @@ function Content(){
         <ContentBox>
             API에서 받아야 함
         </ContentBox>
+        <ContentBox>
+            API에서 받아야 함
+        </ContentBox>
+        <LongButton
+            btnColor={'#0084F4'}
+            btnName={'리뷰 작성하러 가기'}
+        />
         </>
     );
 }
