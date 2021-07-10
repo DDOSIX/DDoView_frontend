@@ -4,6 +4,8 @@ import ContentBox from "../components/ContentBox";
 import styled from 'styled-components';
 
 const ReviewContainer = styled.div`
+    padding-bottom: 14px;
+    border-bottom: 3px solid #efeff0;
 `;
 
 const Wrapper = styled.div`
@@ -13,8 +15,20 @@ const Wrapper = styled.div`
 `;
 
 const CommentContainer = styled.div`
+    
 `;
 
+const CommentInfoWrapper = styled.div`
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #efeff0;
+`;
+
+const CommentWrapper = styled.div`
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #efeff0;
+`;
 
 function ReviewDetail(){
     return (
@@ -36,7 +50,15 @@ function ReviewDetail(){
             </Wrapper>
         </ReviewContainer>
         <CommentContainer>
-            
+            <CommentInfoWrapper>
+                <div>댓글 x개</div>
+            </CommentInfoWrapper>
+            <CommentWrapper>
+                댓글 입력창
+            </CommentWrapper>
+            <div>
+                댓글 목록..
+            </div>
         </CommentContainer>
         </>
     );
