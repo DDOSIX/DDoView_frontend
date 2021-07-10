@@ -43,6 +43,10 @@ const Content = styled.main`
     width: 100%;
 `;
 
+const Footer = styled.footer`
+    height: 50px;
+`;
+
 export default function Layout({ children }){
     return (
         <>
@@ -57,6 +61,7 @@ export default function Layout({ children }){
                 </Wrapper>
             </Header>
             <Content>{children}</Content>
+            <Footer />
         </>
     );
 }
