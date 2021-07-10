@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ItemContainer = styled.div`
@@ -50,8 +50,8 @@ const Description = styled.div`
 
 
 
-
 function ListItem({ category, date, name, description, link, border }){
+    const { pathname } = useLocation();
     return (
         <ItemContainer>
             <Item borderColor={border}>
@@ -59,7 +59,10 @@ function ListItem({ category, date, name, description, link, border }){
                 <span className="name">{ name }</span>
                 <Description>{ description }</Description>
             </Item>
-            <Link to={link} />
+            <Link 
+                to={location => ({ ...location, pathname: "/content" })} 
+                onClick={() => {console.log("onClick")}}
+            />
         </ItemContainer>
     );
 }

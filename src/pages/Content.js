@@ -3,15 +3,16 @@ import Text from '../components/Text'
 import ContentBox from "../components/ContentBox";
 import LongButton from "../components/LongButton";
 
-function Content(){
+function Content({ category, name, desc, link}){
     return (
         <>
         <div>image</div>
         <ListItem 
-            category={"이커머스"}
-            name={"마켓컬리"} 
-            description={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
+            category={category}
+            name={name} 
+            description={desc}
             border={"transparent"}
+            link={link}
         />
         <Text weight={700} size={"18px"}>기업 & 서비스 소개</Text>
         <ContentBox>

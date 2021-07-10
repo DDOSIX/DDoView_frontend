@@ -31,7 +31,11 @@ function App() {
           <Route path={routes.content}>
             <Layout>
               <PageTitle title="Content" />
-              <Content />
+              <Content 
+                category={"이커머스"}
+                name={"마켓컬리"}
+                desc={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
+              />
             </Layout>
           </Route>
           <Route path={routes.reviewDetail}>

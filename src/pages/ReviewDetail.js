@@ -2,6 +2,7 @@ import ListItem from "../components/ListItem";
 import Text from "../components/Text";
 import ContentBox from "../components/ContentBox";
 import styled from 'styled-components';
+import Comment from '../components/Comment';
 
 const ReviewContainer = styled.div`
     padding-bottom: 14px;
@@ -58,6 +59,7 @@ function ReviewDetail(){
             </CommentWrapper>
             <div>
                 댓글 목록..
+                <Comment />
             </div>
         </CommentContainer>
         </>
