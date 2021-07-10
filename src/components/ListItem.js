@@ -1,21 +1,30 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ItemContainer = styled.div`
     display: block;
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     width: 100%;
     position: relative;
+    cursor: pointer;
 `;
 
 const Item = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0px 3.25rem 0px 1rem;
+    align-items: flex-start;
+    margin: 0px 1rem 0px 1rem;
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #efeff0;
+
+    > * {
+        margin-bottom: 8px;
+    }
 
     @media only screen and (max-width: 478px){
         margin-left: 0.625rem;
@@ -32,44 +41,27 @@ const Item = styled.div`
         font-size: 24px;
     }
 
-    & > h3 {
-        font-size: 1rem;
-        font-weight: 500;
-        line-height: 1em;
-        margin: 0px;
-        padding-top: 0.25rem;
-        color: black;
-
-        @media only screen and (max-width: 478px){
-            font-size: 13px;
-            margin-bottom: 0px;
-            padding-top: 0.125rem;
-        }
-    }
 `;
 
 const Description = styled.div`
     font-size: 0.875rem;
     color: rgb(112, 112, 112);
     line-height: 1.4em;
-    margin: 0.5rem 0px 0px; 
 `;
 
 
 
 
-function ListItem({ category, date, name, description }){
+function ListItem({ category, date, name, description, link }){
     return (
-        <div>
-            <ItemContainer>
-                <Item>
-                    <span className="category">{ category }</span>
-                    <span className="name">{ name }</span>
-                    <Description>{ description }</Description>
-                </Item>
-            </ItemContainer>
-            {/* <button></button> */}
-        </div>
+        <ItemContainer>
+            <Item>
+                <span className="category">{ category }</span>
+                <span className="name">{ name }</span>
+                <Description>{ description }</Description>
+            </Item>
+            <Link to={link} />
+        </ItemContainer>
     );
 }
 export default ListItem;

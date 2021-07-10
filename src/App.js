@@ -6,6 +6,9 @@ import { Theme, GlobalStyle } from './GlobalStyle';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import WritingContentPage from './pages/WritingContent';
+import Content from './pages/Content';
+import ReviewDetail from './pages/ReviewDetail';
+import WritingReview from './pages/WritingReview';
 
 function App() {
   return (
@@ -14,15 +17,33 @@ function App() {
       <Router>
         <Switch>
           <Route path={routes.home} exact>
-            {/* <Layout>
+            <Layout>
               <Home 
                 accent={Theme.accent}
                 bgColor={Theme.bgColor}
               />
-            </Layout> */}
-            <WritingContentPage />
+            </Layout>
           </Route>
-          
+          <Route path={routes.content}>
+            <Layout>
+              <Content />
+            </Layout>
+          </Route>
+          <Route path={routes.reviewDetail}>
+            <Layout>
+              <ReviewDetail />
+            </Layout>
+          </Route>
+          <Route path={routes.writingContent}>
+            <Layout>
+              <WritingContentPage />
+            </Layout>
+          </Route>
+          <Route path={routes.writingReview}>
+            <Layout>
+              <WritingReview />
+            </Layout>
+          </Route>
         </Switch>
       </Router>
     </ThemeProvider>

@@ -1,14 +1,14 @@
 import styled from "styled-components";
-
+import { ReactComponent as Logo } from '../assets/logo.svg';
 
 const Header = styled.header`
     width: 100%;
-    border-bottom: 1px solid black;
     background-color: ${(props) => props.theme.bgColor};
     padding: 18px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 18px;
 `;
 
 const Wrapper = styled.div`
@@ -16,6 +16,8 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     & > span {
         font-size: 30px;
@@ -26,16 +28,17 @@ const Wrapper = styled.div`
 const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 18px;
     & > span {
-        font-size: 30px;
-        font-weight: 600;
+        font-size: 20px;
+        font-weight: 700;
     }   
 `;
 
 
 const Content = styled.main`
     margin: 0 auto;
-    margin-top: 43px;
+    margin-top: 18px;
     max-width: 930px;
     width: 100%;
 `;
@@ -46,11 +49,10 @@ export default function Layout({ children }){
             <Header>
                 <Wrapper>
                     <div>
-                        logo
+                        <Logo width="101px" height="38px" />
                     </div>
                     <TextWrapper>
-                        <span>스타트업의 모든 서비스를 체험하고</span>
-                        <span>정성스러운 리뷰를 남겨주세요!</span>
+                        <span>스타트업의 모든 서비스를 체험하고 정성스러운 리뷰를 남겨주세요!</span>
                     </TextWrapper>
                 </Wrapper>
             </Header>

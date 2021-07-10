@@ -11,6 +11,7 @@ const SearchContainer = styled.div`
     background: #efeff0;
     border-radius: .5rem;
     padding-left: 12px;
+    margin-top: 16px;
    
     & > input {
         width: 300px;

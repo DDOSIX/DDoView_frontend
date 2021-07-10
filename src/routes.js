@@ -1,7 +1,7 @@
 const routes = {
     home: "/",
     content: "/content",
-    reviewContent: "/content/review-content",
+    reviewDetail: "/content/review-detail",
     writingContent: "/writing-content",
     writingReview: "/content/writing-review",
 };
