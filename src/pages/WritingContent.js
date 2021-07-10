@@ -69,6 +69,7 @@ const InputContainer = styled.div`
     flex-direction: row;
     align-items: center;
     margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 3px;
     border: 1px solid black;
     height: 48px;
@@ -88,6 +89,10 @@ const InputContainer = styled.div`
         width: 97.5%;
         border: transparent;
         margin-left: 8px;
+        &::placeholder {
+            font-size: 12px;
+            color: #0084F4;
+        }
     }
 
 `;
@@ -115,8 +120,20 @@ function WritingContentPage(){
     return (
         <Container>
             <Wrapper>
-                <Text>회사와 서비스를 소개해주세요.</Text>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <Text>25자 이내로 소개글 한 마디를 작성해주세요.</Text>
+                    <InputContainer>
+                        <input
+                            type="text"
+                            placeholder={"소개글을 작성해주세요."}
+                            name={'default'}
+                            {...register('intro',{
+                                required: "Intro is required.",
+                                maxlength: 25,
+                            })}
+                        />
+                    </InputContainer>
+                    <Text>회사와 서비스를 소개해주세요.</Text>
                     <TextArea 
                         height={"124px"}
                         type="textarea"
