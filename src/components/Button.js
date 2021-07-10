@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link, useLocation } from 'react-router-dom';
 
 const ButtonContainer = styled.div`
     width: 100%;
@@ -26,12 +27,15 @@ const ColoredButton = styled.button`
 `;
 
 
-function Button({ btnColor, children }){
+function Button({ btnColor, btnLink, children }){
+    console.log(btnLink);
     return (
         <ButtonContainer>
+            <Link to={btnLink}>
                 <ColoredButton color={btnColor}>
                     { children }
                 </ColoredButton>
+            </Link>
         </ButtonContainer>
     );
 }

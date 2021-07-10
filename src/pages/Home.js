@@ -36,7 +36,7 @@ function Home({ accent, bgColor }){
         <Container>
             <Button
                 btnColor={accent}
-                btnLink={"#"}
+                btnLink={routes.writingContent}
             >
                 글쓰기
             </Button>

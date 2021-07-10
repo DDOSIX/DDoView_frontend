@@ -52,7 +52,7 @@ const Description = styled.div`
 
 function ListItem({ category, date, name, description, link, border }){
     const { pathname } = useLocation();
-    console.log('link: ', link );
+    // console.log('link: ', link );
     return (
         <ItemContainer>
             <Link to={link}>

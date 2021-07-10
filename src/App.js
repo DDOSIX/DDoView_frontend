@@ -22,7 +22,7 @@ function App() {
           <Route path={routes.home} exact>
             <Layout>
               <PageTitle title="Home" />
-              <Home x
+              <Home 
                 accent={Theme.accent}
                 bgColor={Theme.bgColor}
               />
