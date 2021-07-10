@@ -2,24 +2,50 @@ import ListItem from "../components/ListItem";
 import Text from '../components/Text'
 import ContentBox from "../components/ContentBox";
 import LongButton from "../components/LongButton";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
+import useAsync from '../hooks/useAsync';
 
-function Content({ category, name, desc, link}){
+async function getCompany(index){
+    // GET /api/companies/{companyId}
+    const { data } = await axios.get(
+        `http://ec2-18-221-139-75.us-east-2.compute.amazonaws.com:9001/api/companies/${index}`, {
+            withCredentials: false,
+        }
+    );
+    //console.log(data);
+    return data;
+}
+
+function Content(){
+    const params = useParams();
+    const id = params.id.substring(1);
+    
+    const [state, refetch] = useAsync(() => getCompany(id), [id]);
+    const { loading, data: company, error } = state;
+    
+    console.log(company);
+    if (loading) return <div>로딩중..</div>;
+    if (error) return <div>에러가 발생했습니다</div>;
+    if(!company) return <div>없음</div>;
+    
+
     return (
         <>
-        <div>image</div>
+        <div>company.profilePhotoUrl</div>
         <ListItem 
-            category={category}
-            name={name} 
-            description={desc}
+            category={"default"}
+            name={company.name} 
+            description={company.introduce}
             border={"transparent"}
-            link={link}
+            link={'/'}
         />
         <Text weight={700} size={"18px"}>기업 & 서비스 소개</Text>
         <ContentBox>
-            API에서 받아야 함
+            {company.description}
         </ContentBox>
         <ContentBox>
-            API에서 받아야 함
+            {company.serviceDescription}
         </ContentBox>
         <LongButton
             btnColor={'#0084F4'}

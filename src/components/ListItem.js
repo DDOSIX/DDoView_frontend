@@ -52,17 +52,16 @@ const Description = styled.div`
 
 function ListItem({ category, date, name, description, link, border }){
     const { pathname } = useLocation();
+    console.log('link: ', link );
     return (
         <ItemContainer>
-            <Item borderColor={border}>
-                <span className="category">{ category }</span>
-                <span className="name">{ name }</span>
-                <Description>{ description }</Description>
-            </Item>
-            <Link 
-                to={location => ({ ...location, pathname: "/content" })} 
-                onClick={() => {console.log("onClick")}}
-            />
+            <Link to={link}>
+                <Item borderColor={border}>
+                    <span className="category">{ category }</span>
+                    <span className="name">{ name }</span>
+                    <Description>{ description }</Description>
+                </Item>
+            </Link>
         </ItemContainer>
     );
 }

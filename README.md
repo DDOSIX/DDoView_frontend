@@ -10,8 +10,8 @@ Tto-View Web.
 
 ## View
 
-- [ ] Home
-- [ ] Content
+- [x] Home
+- [x] Content
 - [ ] ReviewDetail
 - [ ] WritingContent
 - [ ] WritingReview

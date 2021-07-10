@@ -5,6 +5,7 @@ import ListItem from '../components/ListItem';
 import routes from '../routes';
 import axios from 'axios';
 import useAsync from '../hooks/useAsync';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
 `;
@@ -24,13 +25,12 @@ async function getCompanies(){
 
 function Home({ accent, bgColor }){
     const [state, refetch] = useAsync(getCompanies, [], true);
-    
-
+    const history = useHistory();
     const { loading, data: companies, error } = state; // state.data 를 users 키워드로 조회
 
     if (loading) return <div>로딩중..</div>;
     if (error) return <div>에러가 발생했습니다</div>;
-    if(!companies) return <button onClick={refetch}>불러오기</button>;
+    if(!companies) return <div>없음</div>;
     //console.log(companies);
     return (
         <Container>
@@ -46,11 +46,11 @@ function Home({ accent, bgColor }){
                     // console.log(company);
                     return (
                         <ListItem 
-                            key={company.compnayId}
+                            key={company.companyId}
                             category={"기본"}
                             name={company.companyName}
                             description={company.introduce}
-                            link={"/"}
+                            link={`/content/:${company.companyId}`}
                             border={"#efeff0"}
                         />
                     )

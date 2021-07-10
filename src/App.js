@@ -22,20 +22,16 @@ function App() {
           <Route path={routes.home} exact>
             <Layout>
               <PageTitle title="Home" />
-              <Home 
+              <Home x
                 accent={Theme.accent}
                 bgColor={Theme.bgColor}
               />
             </Layout>
           </Route>
-          <Route path={routes.content}>
+          <Route path={`${routes.content}/:id`}>
             <Layout>
               <PageTitle title="Content" />
-              <Content 
-                category={"이커머스"}
-                name={"마켓컬리"}
-                desc={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
-              />
+              <Content />
             </Layout>
           </Route>
           <Route path={routes.reviewDetail}>
