@@ -12,12 +12,6 @@ const QuesWrapper = styled.div`
     margin-top: 12px;
 `;
 
-const QuesText = styled.span`
-    color: #0084F4;
-    font-weight: 400;
-    font-size: 16px;
-`;
-
 const Title = styled.div`
     text-align: center;
     font-weight: 700;
@@ -48,10 +42,9 @@ function WritingReview(){
             border={"transparent"}
         />
         <form onSubmit={handleSubmit(onSubmit)}>
-            <Text>리뷰를 작성해주세요.</Text>
-
+            <Text weight={700} size={"18px"}>리뷰를 작성해주세요.</Text>
             <QuesWrapper>
-                <QuesText>Q. 리뷰 제목을 써주세요.</QuesText>
+                <Text weight={400} size={"16px"} color={'#0084F4'}>Q. 리뷰 제목을 써주세요.</Text>
                 <InputContainer>
                     <input 
                         type="text"
@@ -61,7 +54,7 @@ function WritingReview(){
                 </InputContainer>
 
                 {/* 서버에서 받아온 데이터 리스트로 뿌리기 */}
-                <QuesText>Q. 첫번째질문.</QuesText>
+                <Text weight={400} size={"16px"} color={'#0084F4'}>Q. 첫번째질문.</Text>
                     <TextArea 
                         height={"124px"}
                         type="textarea"

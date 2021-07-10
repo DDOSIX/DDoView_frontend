@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 const Span = styled.span`
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: ${(props) => props.fontWeight};
+    font-size: ${(props) => props.fontSize};
+    color: ${(props) => props.fontColor};
 `;
 
-function Text({ children }){
+function Text({ children, weight, size, color }){
     return (
-        <Span>{ children }</Span>
+        <Span fontWeight={weight} fontSize={size} fontColor={color}>{ children }</Span>
     );
 }
 export default Text;

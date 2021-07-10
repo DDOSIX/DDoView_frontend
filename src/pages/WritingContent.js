@@ -79,7 +79,6 @@ const ButtonInputContainer = styled(InputContainer)`
 
 `;
 
-
 function WritingContentPage(){
     const [indexes, setIndexes] = useState([]);
     const [counter, setCounter] = useState(0);
@@ -103,7 +102,7 @@ function WritingContentPage(){
         <Container>
             <Wrapper>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Text>25자 이내로 소개글 한 마디를 작성해주세요.</Text>
+                    <Text weight={700} size={"18px"}>25자 이내로 소개글 한 마디를 작성해주세요.</Text>
                     <InputContainer>
                         <input
                             type="text"
@@ -115,7 +114,7 @@ function WritingContentPage(){
                             })}
                         />
                     </InputContainer>
-                    <Text>회사와 서비스를 소개해주세요.</Text>
+                    <Text weight={700} size={"18px"}>회사와 서비스를 소개해주세요.</Text>
                     <TextArea 
                         height={"124px"}
                         type="textarea"
@@ -134,7 +133,7 @@ function WritingContentPage(){
                         <button className="defaultBtn">첨부하기</button>
                         <span>상세 이미지 파일을 첨부해주세요.</span>
                     </ButtonContainer>
-                    <Text>질문을 작성해주세요.</Text>
+                    <Text weight={700} size={"18px"}>질문을 작성해주세요.</Text>
                     <InputContainer>
                         <input
                             type="text"

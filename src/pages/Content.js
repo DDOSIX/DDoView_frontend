@@ -13,7 +13,7 @@ function Content(){
             description={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
             border={"transparent"}
         />
-        <Text>기업 & 서비스 소개</Text>
+        <Text weight={700} size={"18px"}>기업 & 서비스 소개</Text>
         <ContentBox>
             API에서 받아야 함
         </ContentBox>
