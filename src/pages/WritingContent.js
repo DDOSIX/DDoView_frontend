@@ -7,6 +7,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Text from '../components/Text'
+import BlankBox from "../components/BlankBox";
 
 const Container = styled.div`
     display: flex;
@@ -76,6 +77,10 @@ const ButtonInputContainer = styled(InputContainer)`
         display: none;
         border: none;
     }
+    &::placeholder {
+        font-size: 14px;
+        color: #0084F4;
+    }
 
 `;
 
@@ -114,6 +119,7 @@ function WritingContentPage(){
                             })}
                         />
                     </InputContainer>
+                    <BlankBox size={"14px"} />
                     <Text weight={700} size={"18px"}>회사와 서비스를 소개해주세요.</Text>
                     <TextArea 
                         height={"124px"}

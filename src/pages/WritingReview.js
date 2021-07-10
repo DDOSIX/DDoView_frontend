@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { InputContainer, TextArea } from '../components/Input';
 import ContentBox from "../components/ContentBox";
 import LongButton from "../components/LongButton";
+import BlankBox from "../components/BlankBox";
 
 const QuesWrapper = styled.div`
     display: flex;
@@ -44,6 +45,7 @@ function WritingReview(){
         <form onSubmit={handleSubmit(onSubmit)}>
             <Text weight={700} size={"18px"}>리뷰를 작성해주세요.</Text>
             <QuesWrapper>
+                <BlankBox size={"6px"} />
                 <Text weight={400} size={"16px"} color={'#0084F4'}>Q. 리뷰 제목을 써주세요.</Text>
                 <InputContainer>
                     <input 
@@ -54,6 +56,7 @@ function WritingReview(){
                 </InputContainer>
 
                 {/* 서버에서 받아온 데이터 리스트로 뿌리기 */}
+                <BlankBox size={"16px"} />
                 <Text weight={400} size={"16px"} color={'#0084F4'}>Q. 첫번째질문.</Text>
                     <TextArea 
                         height={"124px"}

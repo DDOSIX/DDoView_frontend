@@ -12,7 +12,7 @@ export const TextArea = styled.textarea`
     box-sizing: border-box;
     margin-top: 15px;
     &::placeholder {
-        font-size: 12px;
+        font-size: 14px;
         color: #0084F4;
     }
     &:focus {
@@ -34,7 +34,7 @@ export const Input = styled.input`
     border: 0.5px solid black;
     box-sizing: border-box;
     &::placeholder {
-        font-size: 12px;
+        font-size: 14px;
         color: #0084F4;
     }
     &:focus {
@@ -47,7 +47,6 @@ export const InputContainer = styled.div`
     flex-direction: row;
     align-items: center;
     margin-top: 15px;
-    margin-bottom: 15px;
     border-radius: 3px;
     border: 1px solid black;
     height: 48px;
@@ -57,7 +56,7 @@ export const InputContainer = styled.div`
         border: transparent;
         margin-left: 8px;
         &::placeholder {
-            font-size: 12px;
+            font-size: 14px;
             color: #0084F4;
         }
     }

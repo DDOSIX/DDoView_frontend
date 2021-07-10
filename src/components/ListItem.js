@@ -32,7 +32,7 @@ const Item = styled.div`
 
     & .category {
         color: #0084F4;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     & .name {
@@ -43,7 +43,7 @@ const Item = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 0.875rem;
+    font-size: 16px;
     color: rgb(112, 112, 112);
     line-height: 1.4em;
 `;
