@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
+export const Theme = {
+    accent: "#0084F4",
+    bgColor: "#ffffff",
+    fontColor: "#000000",
+};
+
 export const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
@@ -10,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
         font-family: "Noto Sans KR", sans-serif !important;
+        font-size: 16px;
     }
 
     a {
