@@ -8,3 +8,15 @@ Tto-View Web.
 - [x] Global Style
 - [x] Arch.
 
+## View
+
+- [ ] Home
+- [ ] Content
+- [ ] ReviewDetail
+- [ ] WritingContent
+- [ ] WritingReview
+
+## 
+
+- [ ] API
+- [ ] Router
