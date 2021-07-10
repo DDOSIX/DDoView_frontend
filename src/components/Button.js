@@ -21,7 +21,7 @@ const ColoredButton = styled.button`
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 `;
 

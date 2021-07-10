@@ -26,11 +26,13 @@ function Home({ accent, bgColor }){
                     name={"마켓컬리"} 
                     description={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
                     link={routes.reviewContent}
+                    border={"#efeff0"}
                 />
                 <ListItem 
                     category={"이커머스"}
                     name={"마켓컬리"} 
                     description={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
+                    border={"#efeff0"}
                 />
             </Wrapper>
         </Container>

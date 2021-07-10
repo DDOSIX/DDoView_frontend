@@ -16,19 +16,18 @@ const Item = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0px 1rem 0px 1rem;
+    margin: 0 auto;
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #efeff0;
+    border-bottom: 1px solid ${(props) => props.borderColor };
 
     > * {
         margin-bottom: 8px;
     }
 
     @media only screen and (max-width: 478px){
-        margin-left: 0.625rem;
-        margin-right: 2.5rem;
+        
     }
 
     & .category {
@@ -52,10 +51,10 @@ const Description = styled.div`
 
 
 
-function ListItem({ category, date, name, description, link }){
+function ListItem({ category, date, name, description, link, border }){
     return (
         <ItemContainer>
-            <Item>
+            <Item borderColor={border}>
                 <span className="category">{ category }</span>
                 <span className="name">{ name }</span>
                 <Description>{ description }</Description>

@@ -5,7 +5,7 @@ import { Input, TextArea } from '../components/Input';
 import Button from "../components/Button";
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import Text from '../components/Text'
 
 const Container = styled.div`
     display: flex;
@@ -14,10 +14,6 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-const Text = styled.span`
-    font-weight: 700;
-    font-size: 14px;
-`;
 
 const Wrapper = styled.div`
     
@@ -28,22 +24,44 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
     }    
+`;
 
-    & .circleBtn {
-        border: 1px solid #0084F4;
-        background-color: #0084F4;
-        color: white;
-        width: 40px;
-        height: 40px;
+const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & button {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
+        border: 1px solid #0084F4;
+        background-color: #0084F4;
+        color: white;
         cursor: pointer;
+        margin: 15px 12px 15px 0;
+    }
+
+    & .defaultBtn {
+        height: 30px;
+        width: 64px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
+    & .circleBtn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    & span {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
     }
 `;
-
 
 
 
@@ -70,7 +88,6 @@ function WritingContentPage(){
         <Container>
             <Wrapper>
                 <Text>회사와 서비스를 소개해주세요.</Text>
-                
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <TextArea 
                         height={"124px"}
@@ -86,12 +103,18 @@ function WritingContentPage(){
                         name={"서비스소개"}
                         {...register("서비스소개")}
                     />
-                    <Button
-                        btnColor={"#0084F4"}
-                    >
-                        첨부하기
-                    </Button>
+                    <ButtonContainer>
+                        <button className="defaultBtn">첨부하기</button>
+                        <span>상세 이미지 파일을 첨부해주세요.</span>
+                    </ButtonContainer>
                     <Text>질문을 작성해주세요.</Text>
+                    <Input 
+                        type="text"
+                        height={"48px"}
+                        placeholder={"Q. 질문을 작성해주세요."}
+                        name={'default'}
+                        {...register('default')}
+                    />
                     {indexes.map(index => {
                         const fieldName = `input[${index}]`;
                         return (
@@ -108,9 +131,12 @@ function WritingContentPage(){
                             </fieldset>
                     );
                     })}
-                    <button className="circleBtn" type="button" onClick={() => addInput()}>
-                        <FontAwesomeIcon color="white" size="lg" icon={faPlus} />
-                    </button>
+                    <ButtonContainer>
+                        <button className="circleBtn" type="button" onClick={() => addInput()}>
+                            <FontAwesomeIcon color="white" size="lg" icon={faPlus} />
+                        </button>
+                        <span>질문을 추가해주세요.</span>
+                    </ButtonContainer>
                     <input type="submit" />
                 </form>
             </Wrapper>
