@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Input, TextArea } from '../components/Input';
 import Button from "../components/Button";
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Text from '../components/Text'
 
@@ -63,6 +64,33 @@ const ButtonContainer = styled.div`
     }
 `;
 
+const InputContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 3px;
+    border: 1px solid black;
+    height: 48px;
+
+    &:hover{
+        > button {
+            display: block;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+    }
+    > button {
+        display: none;
+        border: none;
+    }
+    > input{
+        width: 97.5%;
+        border: transparent;
+        margin-left: 8px;
+    }
+
+`;
 
 
 function WritingContentPage(){
@@ -108,27 +136,28 @@ function WritingContentPage(){
                         <span>상세 이미지 파일을 첨부해주세요.</span>
                     </ButtonContainer>
                     <Text>질문을 작성해주세요.</Text>
-                    <Input 
-                        type="text"
-                        height={"48px"}
-                        placeholder={"Q. 질문을 작성해주세요."}
-                        name={'default'}
-                        {...register('default')}
-                    />
+                    <InputContainer>
+                        <input
+                            type="text"
+                            placeholder={"Q. 질문을 작성해주세요."}
+                            name={'default'}
+                            {...register('default')}
+                        />
+                    </InputContainer>
                     {indexes.map(index => {
                         const fieldName = `input[${index}]`;
                         return (
-                            <fieldset name={fieldName} key={fieldName}>
-                                <Input 
+                            <InputContainer>
+                                <input 
                                     type="text"
-                                    height={"48px"}
                                     placeholder={"Q. 질문을 작성해주세요."}
                                     name={`${fieldName}`}
                                     {...register(`${fieldName}`)}
                                 />
-                                
-                                <button type="button" onClick={() => removeInput(index)}>삭제</button>
-                            </fieldset>
+                                <button type="button" onClick={() => removeInput(index)}>
+                                    <FontAwesomeIcon size="lg" icon={faTimes} />
+                                </button>
+                            </InputContainer>
                     );
                     })}
                     <ButtonContainer>

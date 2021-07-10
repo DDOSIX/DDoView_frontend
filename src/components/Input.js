@@ -32,7 +32,6 @@ export const Input = styled.input`
     background-color: white;
     color: rgb(38, 38, 38);
     border: 0.5px solid black;
-    margin-top: 15px;
     box-sizing: border-box;
     &::placeholder {
         font-size: 12px;
