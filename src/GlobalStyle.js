@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
         box-sizing: border-box;
@@ -48,4 +48,3 @@ const GlobalStyle = createGlobalStyle`
         border-image: initial;
     }
 `;
-export default GlobalStyle;

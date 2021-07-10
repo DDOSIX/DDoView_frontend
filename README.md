@@ -2,9 +2,9 @@
 
 Tto-View Web.
 
-## Setting: 
+## Setting
 
 - [x] Router
 - [x] Global Style
-- [ ] Arch.
+- [x] Arch.
 
