@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route path={routes.home} exact>
-            <Layout>
+            <Layout homeLink={routes.home}>
               <PageTitle title="Home" />
               <Home 
                 accent={Theme.accent}
@@ -29,25 +29,25 @@ function App() {
             </Layout>
           </Route>
           <Route path={`${routes.content}/:id`}>
-            <Layout>
+            <Layout homeLink={routes.home}>
               <PageTitle title="Content" />
               <Content />
             </Layout>
           </Route>
           <Route path={routes.reviewDetail}>
-            <Layout>
+            <Layout homeLink={routes.home}>
               <PageTitle title="ReviewDetail" />
               <ReviewDetail />
             </Layout>
           </Route>
           <Route path={routes.writingContent}>
-            <Layout>
+            <Layout homeLink={routes.home}>
               <PageTitle title="WritingContent" />
               <WritingContent />
             </Layout>
           </Route>
           <Route path={routes.writingReview}>
-            <Layout>
+            <Layout homeLink={routes.home}>
               <PageTitle title="WritingReview" />
               <WritingReview />
             </Layout>

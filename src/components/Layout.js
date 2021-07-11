@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from '../assets/logo.svg';
 
 const Header = styled.header`
@@ -47,14 +48,16 @@ const Footer = styled.footer`
     height: 50px;
 `;
 
-export default function Layout({ children }){
+export default function Layout({ homeLink, children }){
     return (
         <>
             <Header>
                 <Wrapper>
-                    <div>
-                        <Logo width="101px" height="38px" />
-                    </div>
+                    <Link to={homeLink}>
+                        <div>
+                            <Logo width="101px" height="38px" />
+                        </div>
+                    </Link>
                     <TextWrapper>
                         <span>스타트업의 모든 서비스를 체험하고 정성스러운 리뷰를 남겨주세요!</span>
                     </TextWrapper>
