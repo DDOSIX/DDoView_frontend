@@ -52,6 +52,7 @@ function Content(){
             btnColor={'#0084F4'}
             btnName={'리뷰 작성하러 가기'}
             btnLink={routes.writingReview}
+            btnParams={company}
         />
         </>
     );

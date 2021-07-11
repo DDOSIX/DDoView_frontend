@@ -23,10 +23,10 @@ const ColoredButton = styled.button`
     cursor: pointer;
 `;
 
-function LongButton({ btnColor, btnName, btnLink }){
+function LongButton({ btnColor, btnName, btnLink, btnParams }){
     return (
         <ButtonContainer>
-            <Link to={btnLink}>
+            <Link to={btnLink} params={btnParams}>
                 <ColoredButton color={btnColor}>
                     { btnName }
                 </ColoredButton>

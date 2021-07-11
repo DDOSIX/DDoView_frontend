@@ -107,7 +107,7 @@ const ButtonInputContainer = styled(InputContainer)`
 
 async function patchCompany(payload){
     // PATCH /api/companies
-    console.log(payload);
+    //console.log(payload);
     try{
         const response = await axios.patch(
             'http://ec2-18-221-139-75.us-east-2.compute.amazonaws.com:9001/api/companies/', 

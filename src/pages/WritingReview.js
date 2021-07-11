@@ -6,6 +6,7 @@ import { InputContainer, TextArea } from '../components/Input';
 import ContentBox from "../components/ContentBox";
 import LongButton from "../components/LongButton";
 import BlankBox from "../components/BlankBox";
+import { useParams } from "react-router-dom";
 
 const QuesWrapper = styled.div`
     display: flex;
@@ -27,7 +28,7 @@ const Sentence = styled.div`
 `;
 
 
-function WritingReview(){
+function WritingReview({ category, name, desc }){
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
@@ -37,7 +38,7 @@ function WritingReview(){
     return (
         <>
         <ListItem 
-            category={"이커머스"}
+            category={"기본"}
             name={"마켓컬리"} 
             description={"당신의 리뷰를 원합니다. 새벽배송 참여자 모집 중!"}
             border={"transparent"}

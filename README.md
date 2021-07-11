@@ -13,10 +13,10 @@ Tto-View Web.
 - [x] Home
 - [x] Content
 - [ ] ReviewDetail
-- [ ] WritingContent
-- [ ] WritingReview
+- [x] WritingContent
+- [x] WritingReview
 
 ## 
 
 - [ ] API
-- [ ] Router
+- [x] Router
