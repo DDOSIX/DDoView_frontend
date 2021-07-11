@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const ButtonContainer = styled.div`
     max-width: 930px;
@@ -25,9 +26,11 @@ const ColoredButton = styled.button`
 function LongButton({ btnColor, btnName, btnLink }){
     return (
         <ButtonContainer>
+            <Link to={btnLink}>
                 <ColoredButton color={btnColor}>
                     { btnName }
                 </ColoredButton>
+            </Link>
         </ButtonContainer>
     );
 }

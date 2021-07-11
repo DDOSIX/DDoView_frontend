@@ -5,6 +5,7 @@ import LongButton from "../components/LongButton";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import useAsync from '../hooks/useAsync';
+import routes from '../routes';
 
 async function getCompany(index){
     // GET /api/companies/{companyId}
@@ -50,6 +51,7 @@ function Content(){
         <LongButton
             btnColor={'#0084F4'}
             btnName={'리뷰 작성하러 가기'}
+            btnLink={routes.writingReview}
         />
         </>
     );
