@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TextArea = styled.textarea`
     width: 100%;
+    font: inherit;
     font-size: 14px;
     height: ${props => props.height};
     border-radius: 3px;
@@ -25,6 +26,7 @@ export const TextArea = styled.textarea`
 
 export const Input = styled.input`
     width: 100%;
+    font: inherit;
     font-size: 14px;
     height: ${props => props.height};
     border-radius: 3px;

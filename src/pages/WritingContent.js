@@ -8,6 +8,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Text from '../components/Text'
 import BlankBox from "../components/BlankBox";
+import axios from 'axios';
+import { inheritTrailingComments } from "@babel/types";
+import { forEach } from "async";
 
 const Container = styled.div`
     display: flex;
@@ -26,6 +29,24 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
     }    
+
+    & > form > input {  
+        border: 1px solid #0084F4;
+        max-width: 930px;
+        background-color: #0084F4;
+        margin-right: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        border-radius: 0.75rem;
+        padding: 0.75rem 0.75rem 0.7rem 1rem;
+        font-size: 0.875rem;
+        color: white;
+        cursor: pointer;
+
+    }
 `;
 
 const ButtonContainer = styled.div`
@@ -84,13 +105,49 @@ const ButtonInputContainer = styled(InputContainer)`
 
 `;
 
+async function patchCompany(payload){
+    // PATCH /api/companies
+    console.log(payload);
+    try{
+        const response = await axios.patch(
+            'http://ec2-18-221-139-75.us-east-2.compute.amazonaws.com:9001/api/companies/', 
+            payload, 
+            { withCredentials: false },
+        );
+        console.log('Response: ', response);
+    } catch(error){
+        console.log(error)
+    }
+    
+}
+
 function WritingContentPage(){
+    const FIELD_NAME = 'ques';
+
     const [indexes, setIndexes] = useState([]);
-    const [counter, setCounter] = useState(0);
-    const { register, handleSubmit } = useForm();
+    const [counter, setCounter] = useState(1);
+    const { register, handleSubmit, getValues } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
+        let questionsArray = [];
+        questionsArray.push(data.defaultQ);
+        
+        if(data.ques){
+            data.ques.map((q, index) => {
+                questionsArray.push(q.value);
+            })
+        };
+        
+        const payload = {
+            "companyId": counter,
+            "name": "default",
+            "profilePhotoUrl": "https://picsum.photos/1000/1000",
+            "introduce": data.intro,
+            "description": data.desc,
+            "serviceDescription": data.serviceDesc,
+            "questions": questionsArray,
+        };
+        patchCompany(payload);
     };
 
     const addInput = () => {
@@ -112,7 +169,7 @@ function WritingContentPage(){
                         <input
                             type="text"
                             placeholder={"소개글을 작성해주세요."}
-                            name={'default'}
+                            name={'intro'}
                             {...register('intro',{
                                 required: "Intro is required.",
                                 maxlength: 25,
@@ -125,15 +182,15 @@ function WritingContentPage(){
                         height={"124px"}
                         type="textarea"
                         placeholder={"회사를 소개해주세요."}
-                        name={"회사소개"}
-                        {...register("회사소개")}
+                        name={'desc'}
+                        {...register('desc')}
                     />
                     <TextArea 
                         height={"124px"}
                         type="textarea"
                         placeholder={"서비스를 소개해주세요."}
-                        name={"서비스소개"}
-                        {...register("서비스소개")}
+                        name={'serviceDesc'}
+                        {...register('serviceDesc')}
                     />
                     <ButtonContainer>
                         <button className="defaultBtn">첨부하기</button>
@@ -144,19 +201,19 @@ function WritingContentPage(){
                         <input
                             type="text"
                             placeholder={"Q. 질문을 작성해주세요."}
-                            name={'default'}
-                            {...register('default')}
+                            name={`defaultQ`}
+                            {...register(`defaultQ`)}
                         />
                     </InputContainer>
-                    {indexes.map(index => {
-                        const fieldName = `input[${index}]`;
+                    {indexes.map((index, i) => {
                         return (
                             <ButtonInputContainer>
                                 <input 
+                                    key={index.id}
                                     type="text"
                                     placeholder={"Q. 질문을 작성해주세요."}
-                                    name={`${fieldName}`}
-                                    {...register(`${fieldName}`)}
+                                    name={`${FIELD_NAME}[${i}].value`}
+                                    {...register(`${FIELD_NAME}[${i}].value`)}
                                 />
                                 <button type="button" onClick={() => removeInput(index)}>
                                     <FontAwesomeIcon size="lg" icon={faTimes} />
